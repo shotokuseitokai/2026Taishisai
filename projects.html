@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企画一覧 | 聖徳学園高等学校 太子祭2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: var(--main-color);">
+                <i class="fas fa-school"></i> 太子祭 2025
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="projects.html" class="active">企画一覧</a></li>
+                <li><a href="index.html#schedule">スケジュール</a></li>
+                <li><a href="index.html#access">アクセス</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <main>
+        <div class="page-header">
+            <h1><i class="fas fa-th-large"></i> 企画一覧</h1>
+            <p>クラス・部活・有志団体の出し物をすべて紹介！</p>
+        </div>
+
+        <section class="container fade-in">
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">すべて</button>
+                <button class="filter-btn" data-filter="food">飲食</button>
+                <button class="filter-btn" data-filter="attraction">遊ぶ</button>
+                <button class="filter-btn" data-filter="exhibition">展示・公演</button>
+            </div>
+
+            <div class="grid-container">
+                <div class="card" onclick="openModal(this)" 
+                     data-title="1-1 セレスティアル・キャバーン" 
+                     data-image="images/class/high1-1.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="ここは長い説明文です！&#10;教室全体を使った巨大迷路。&#10;隠されたスタンプを全部見つけられるかな？">
+                    
+                    <div class="card-img">
+                         <img src="images/class/high1-1.png" alt="画像">
+                    </div> <div class="card-body">
+                        <span class="tag game">アトラクション</span>
+                        <h3>1-1 セレスティアル・キャバーン</h3>
+                        <p>教室全体を使った巨大迷路が登場！</p>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="food"
+                     data-title="3-B 激辛カレー"
+                     data-image="images/curry.jpg"
+                     data-tag="飲食"
+                     data-tag-class="food"
+                     data-desc="スパイスから調合した本格派。完食者には特典あり！">
+                     
+                    <div class="card-img" style="background-color: #ffc3a0;">
+                        <span>画像</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="tag food">飲食</span>
+                        <h3>3-B 激辛カレー</h3>
+                        <p>スパイスから調合した本格派。完食者には特典あり！</p>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="attraction"
+                     data-title="2-C 脱出ゲーム"
+                     data-image="images/escape.jpg"
+                     data-tag="アトラクション"
+                     data-tag-class="game"
+                     data-desc="理科室からの脱出...制限時間内に謎を解け！">
+                     
+                    <div class="card-img" style="background-color: #a18cd1;">
+                        <span>画像</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="tag game">アトラクション</span>
+                        <h3>2-C 脱出ゲーム</h3>
+                        <p>理科室からの脱出...制限時間内に謎を解け！</p>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="attraction"
+                     data-title="2-D 縁日ワールド"
+                     data-image="images/festival.jpg"
+                     data-tag="アトラクション"
+                     data-tag-class="game"
+                     data-desc="射的・輪投げ・スーパーボールすくい。景品ゲット！">
+                     
+                    <div class="card-img" style="background-color: #89f7fe;">
+                        <span>画像</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="tag game">アトラクション</span>
+                        <h3>2-D 縁日ワールド</h3>
+                        <p>射的・輪投げ・スーパーボールすくい。景品ゲット！</p>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition"
+                     data-title="美術部 作品展"
+                     data-image="images/art.jpg"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="油絵からデジタルアートまで展示。ポストカード販売も。">
+                     
+                    <div class="card-img" style="background-color: #fbc2eb;">
+                        <span>画像</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="tag exhibit">展示</span>
+                        <h3>美術部 作品展</h3>
+                        <p>油絵からデジタルアートまで展示。ポストカード販売も。</p>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition"
+                     data-title="ダンス部公演"
+                     data-image="images/dance.jpg"
+                     data-tag="公演"
+                     data-tag-class="exhibit"
+                     data-desc="体育館でのパフォーマンス。スケジュールを確認してね！">
+                     
+                    <div class="card-img" style="background-color: #84fab0;">
+                        <span>画像</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="tag exhibit">公演</span>
+                        <h3>ダンス部公演</h3>
+                        <p>体育館でのパフォーマンス。スケジュールを確認してね！</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <a href="index.html" class="btn-primary"><i class="fas fa-arrow-left"></i> TOPへ戻る</a>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 〇〇高等学校 文化祭実行委員会</p>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-img" src="" alt="企画画像">
+            <div class="modal-text">
+                <h2 id="modal-title">企画タイトル</h2>
+                <p class="modal-meta"><span id="modal-tag" class="tag">タグ</span></p>
+                <p id="modal-desc">説明文</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
