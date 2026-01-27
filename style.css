@@ -375,22 +375,23 @@ footer {
 }
 
 /* =========================================
-   8. 検索ウィンドウ & フィルター調整
+   6. 検索ウィンドウ & フィルター調整 (横並び版)
    ========================================= */
 
-/* フィルターボタンと検索窓をまとめる枠 */
 .filter-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: flex;             /* 横並びにする魔法 */
+    justify-content: space-between; /* 両端に配置（左にボタン、右に検索） */
+    align-items: center;       /* 上下の中心を揃える */
+    flex-wrap: wrap;           /* 画面が狭いときは折り返す */
+    gap: 20px;                 /* ボタンと検索窓の間隔 */
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .filter-container {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;           /* ボタンが多い場合も折り返す */
 }
 
 /* 検索ボックスのデザイン */
@@ -401,18 +402,17 @@ footer {
 }
 
 .search-box input {
-    padding: 10px 15px 10px 40px; /* アイコンの分、左を空ける */
+    padding: 10px 15px 10px 40px;
     border-radius: 50px;
     border: 2px solid #ddd;
     outline: none;
     font-size: 1rem;
-    width: 250px;
+    width: 250px; /* PCでの幅 */
     transition: all 0.3s ease;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .search-box input:focus {
-    border-color: var(--main-color);
+    border-color: #ff6b6b; /* テーマカラーに合わせて変更OK */
     box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
 }
 
@@ -420,21 +420,25 @@ footer {
     position: absolute;
     left: 15px;
     color: #aaa;
-    pointer-events: none; /* アイコンをクリックしても無視するように */
 }
 
-/* スマホ対応：縦並びにする */
+/* --- スマホ対応（縦並びに戻す） --- */
 @media (max-width: 768px) {
     .filter-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .filter-container {
-        flex-wrap: wrap;
+        flex-direction: column; /* 縦並びにする */
         justify-content: center;
     }
-    .search-box, .search-box input {
-        width: 90%;
-        max-width: 400px;
+    
+    .filter-container {
+        justify-content: center; /* ボタンを中央寄せ */
+    }
+
+    .search-box {
+        width: 100%;             /* 検索窓を横幅いっぱいに */
+        justify-content: center;
+    }
+
+    .search-box input {
+        width: 90%;              /* スマホでは少し幅広に */
     }
 }
