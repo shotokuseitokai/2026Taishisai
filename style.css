@@ -374,8 +374,15 @@ footer {
     nav ul { flex-direction: column; align-items: center; }
 }
 
+window.addEventListener('click', (e) => {
+    // クリックされた場所(e.target)が、モーダル全体(黒背景部分)と同じなら閉じる
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
 /* =========================================
-   6. 検索ウィンドウ & フィルター調整 (横並び版)
+   8. 検索ウィンドウ & フィルター調整 (横並び版)
    ========================================= */
 
 .filter-wrapper {
