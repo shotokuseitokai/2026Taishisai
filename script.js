@@ -154,10 +154,24 @@ if (closeBtn) {
     });
 }
 
-// ★修正済み：黒い背景をクリックしたとき
-window.addEventListener('click', (e) => {
-    // modalが存在し、かつクリックされたのがmodal自体(黒背景)なら閉じる
-    if (modal && e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
+// ==========================================
+//  背景クリックでも詳細画面を閉じる処理 (スマホ対応版)
+// ==========================================
+
+// モーダルそのものにイベントを設定（windowより確実です）
+if (modal) {
+    // PCのクリック用 & スマホのタップ用
+    const closeEvents = ['click', 'touchend'];
+
+    closeEvents.forEach(eventType => {
+        modal.addEventListener(eventType, (e) => {
+            // 黒い背景(modal)そのものが押された時だけ閉じる
+            // (中の白いカードが押された時は閉じない)
+            if (e.target === modal) {
+                // スマホでの誤動作防止（ゴーストクリック対策）
+                e.preventDefault(); 
+                modal.classList.remove('active');
+            }
+        });
+    });
+}
