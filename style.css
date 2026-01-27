@@ -444,9 +444,3 @@ footer {
     }
 }
 
-window.addEventListener('click', (e) => {
-    // クリックされた場所(e.target)が、モーダル全体(黒背景部分)と同じなら閉じる
-    if (e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
