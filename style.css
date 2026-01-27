@@ -268,7 +268,9 @@ nav a:hover, nav a.active {
     transition: opacity 0.3s;
     padding: 20px;
     box-sizing: border-box;
+    cursor: pointer; 
 }
+
 .modal.active { display: flex; opacity: 1; }
 
 .modal-content {
