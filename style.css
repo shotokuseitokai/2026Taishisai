@@ -536,3 +536,37 @@ footer {
 }
     }
 }
+/* =========================================
+   タイムテーブル（時間ピッタリ絶対配置パッチ）
+   ========================================= */
+
+/* 1時間を120pxにする（1分＝2pxの計算で9:00〜16:00に対応） */
+.time-slot {
+    height: 120px !important;
+}
+
+/* 各場所の列の追加カラー（校庭・90周年ホール） */
+.location-col.red-bg { background-color: #FF7676; }
+.location-col.green-bg { background-color: #66C282; }
+
+/* カードを指定の時間の位置に絶対配置する設定 */
+.matrix-card {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0 !important; /* 古い余白設定を無効化 */
+    min-height: 35px; /* 10分の短い企画でも文字が読めるように保護 */
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 小さい枠でも文字がはみ出さないように調整 */
+.m-time {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+}
+.m-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
