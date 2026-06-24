@@ -175,3 +175,27 @@ if (modal) {
         });
     });
 }
+
+// ==============================================
+// タイムテーブルのタブ切り替え
+// ==============================================
+const tabBtns = document.querySelectorAll('.tab-btn');
+const timeContents = document.querySelectorAll('.timetable-content');
+
+if (tabBtns.length > 0) {
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 1. すべてのボタンの色（active）を外す
+            tabBtns.forEach(b => b.classList.remove('active'));
+            // 2. すべてのタイムテーブルを非表示にする
+            timeContents.forEach(content => content.classList.remove('active'));
+
+            // 3. クリックされたボタンに色（active）をつける
+            btn.classList.add('active');
+            
+            // 4. 対応するIDのタイムテーブルを表示する
+            const targetId = btn.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+}
