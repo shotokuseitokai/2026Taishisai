@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイムテーブル | 文化祭2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">文化祭2026</a></div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="projects.html">企画一覧</a></li>
+                <li><a href="timetable.html" class="active">タイムテーブル</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>TIMETABLE</h1>
+        <p>ステージ スケジュール</p>
+    </div>
+
+    <div class="container">
+        <div class="timetable-container">
+            
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-target="day1">1日目 (9/19)</button>
+                <button class="tab-btn" data-target="day2">2日目 (9/20)</button>
+            </div>
+
+            <div id="day1" class="timetable-content active">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="time">10:00 - 10:30</div>
+                        <div class="event-details">
+                            <span class="place-tag gym">体育館</span>
+                            <h3>オープニングセレモニー</h3>
+                            <p>校長先生の挨拶、実行委員長からの言葉でいよいよ開幕！</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">11:00 - 12:00</div>
+                        <div class="event-details">
+                            <span class="place-tag stage">中庭ステージ</span>
+                            <h3>軽音楽部 ライブ Vol.1</h3>
+                            <p>話題のあの曲から定番曲まで、熱いライブをお届けします！</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">13:30 - 15:00</div>
+                        <div class="event-details">
+                            <span class="place-tag gym">体育館</span>
+                            <h3>ダンス部 パフォーマンス</h3>
+                            <p>総勢50名による圧巻のダンスステージ！絶対に見逃せない！</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="day2" class="timetable-content">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="time">10:30 - 11:30</div>
+                        <div class="event-details">
+                            <span class="place-tag stage">中庭ステージ</span>
+                            <h3>有志バンド 決勝戦</h3>
+                            <p>予選を勝ち抜いた3組による頂上決戦！</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">14:00 - 15:30</div>
+                        <div class="event-details">
+                            <span class="place-tag gym">体育館</span>
+                            <h3>後夜祭・エンディング</h3>
+                            <p>最後はみんなで盛り上がろう！結果発表もあります。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="sns-links">
+            </div>
+        <p>&copy; 2026 文化祭実行委員会</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
