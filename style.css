@@ -447,125 +447,92 @@ footer {
 }
 
 /* =========================================
-   タイムテーブル（スケジュール）用デザイン
+   マトリックス型タイムテーブル（場所ごと横並び）
    ========================================= */
 
-.timetable-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* タブボタンのデザイン */
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.tab-buttons .tab-btn {
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: 2px solid var(--main-color);
-    background-color: white;
-    color: var(--main-color);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.tab-buttons .tab-btn.active,
-.tab-buttons .tab-btn:hover {
-    background-color: var(--main-color);
-    color: white;
-}
-
-/* タイムテーブルの中身（非表示/表示の切り替え） */
-.timetable-content {
-    display: none;
-    animation: fadeIn 0.4s ease-in-out;
-}
-.timetable-content.active {
-    display: block;
-}
-
-/* 縦のタイムライン（線） */
-.timeline {
-    position: relative;
-    padding-left: 30px;
-    margin: 20px 0;
-    /* ここが縦線になります */
-    border-left: 3px solid var(--accent-color); 
-}
-
-/* 各スケジュールのブロック */
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* タイムラインの丸いポッチ */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -39px; /* 縦線の上に重なるように調整 */
-    top: 20px;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border: 4px solid var(--main-color);
-    border-radius: 50%;
-}
-
-/* 時間のテキスト */
-.timeline-item .time {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--main-color);
+/* スマホ向けのスクロール案内テキスト */
+.scroll-instruction {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #666;
     margin-bottom: 10px;
+}
+
+/* 横スクロール用の大枠 */
+.timetable-matrix-wrapper {
+    width: 100%;
+    overflow-x: auto; /* ここでスマホでの横スクロールを可能にする */
+    padding-bottom: 20px;
+}
+
+/* 表全体のレイアウト */
+.timetable-matrix {
+    display: flex;
+    min-width: 900px; /* これより狭くならないようにしてスクロールさせる */
+    gap: 15px;
+}
+
+/* 左端の「時間」列 */
+.time-col {
+    width: 60px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.time-slot {
+    height: 100px; /* 1時間を100pxの高さにする */
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95rem;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
     font-family: 'RocknRoll One', sans-serif;
 }
 
-/* タイトルと説明文 */
-.event-details h3 {
-    margin: 5px 0 10px;
-    font-size: 1.3rem;
-    color: var(--text-color);
+/* 各場所の列（講堂、校庭など） */
+.location-col {
+    flex: 1;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
-.event-details p {
-    margin: 0;
-    color: #555;
-    font-size: 0.95rem;
+.location-col.pink-bg { background-color: #FF9EBB; } /* 画像のピンク */
+.location-col.blue-bg { background-color: #82B3D5; } /* 画像のブルー */
+
+/* 各列の場所名ヘッダー */
+.matrix-header {
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
 }
 
-/* 場所のタグ */
-.place-tag {
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 20px;
-    color: white;
+/* 企画の白いカード */
+.matrix-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.m-time {
+    font-size: 0.85rem;
+    color: #333;
     margin-bottom: 5px;
 }
-.place-tag.gym { background-color: #4ECDC4; } /* 体育館 */
-.place-tag.stage { background-color: #FF9F1C; } /* 中庭 */
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-    .tab-buttons {
-        flex-direction: column;
-    }
-    .timeline {
-        padding-left: 20px;
-    }
-    .timeline-item::before {
-        left: -29px;
+.m-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #222;
+}
     }
 }
