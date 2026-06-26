@@ -3,7 +3,7 @@
 // ==============================================
 
 // ★ここに文化祭の日付を入れてください (年, 月-1, 日)
-const festivalDate = new Date(2026, 8, 19); 
+const festivalDate = new Date(2026, 8, 19, 9, 0); 
 
 function updateTimer() {
     const timerElement = document.getElementById('timer');
