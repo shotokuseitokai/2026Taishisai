@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=RocknRoll+One&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,11 +26,9 @@
         </div>
         <nav id="nav-menu">
             <ul>
-                <li><a href="#top">TOP</a></li>
-                <li><a href="#about">概要</a></li>
-                <li><a href="#schedule">スケジュール</a></li>
-                <li><a href="#class">企画一覧</a></li>
-                <li><a href="#access">アクセス</a></li>
+                <li><a href="#top" class="active">TOP</a></li>
+                <li><a href="projects.html">企画一覧</a></li>
+                <li><a href="timetable.html">タイムテーブル</a></li>
             </ul>
         </nav>
     </header>
@@ -67,9 +63,33 @@
                     生徒一人ひとりの個性が爆発する2日間です！今年は一般公開もありますので、ご家族・ご友人もぜひお越しください。
                 </p>
                 <ul class="info-list">
-                    <li><strong><i class="fas fa-clock"></i> 日時:</strong> 2026年09月19日(土)・20日(日) 9:00 〜 15:30</li>
-                    <li><strong><i class="fas fa-shoe-prints"></i> 持ち物:</strong> なし</li>
-                    <li><strong><i class="fas fa-camera"></i> 撮影:</strong> 許可エリアのみ可</li>
+                    <li>
+    <div class="info-row">
+        <span class="info-icon"><i class="fas fa-clock"></i> 日時:</span>
+        <div class="info-content">
+            <div class="main-text">2026年09月19日(土)・20日(日) 9:00 〜 15:30</div>
+        </div>
+    </div>
+</li>
+
+<li>
+    <div class="info-row">
+        <span class="info-icon"><i class="fas fa-shoe-prints"></i> 持ち物:</span>
+        <div class="info-content">
+            <div class="main-text">なし</div>
+        </div>
+    </div>
+</li>
+
+<li>
+    <div class="info-row">
+        <span class="info-icon"><i class="fas fa-camera"></i> 撮影:</span>
+        <div class="info-content">
+            <div class="main-text">許可エリアのみ可</div>
+            <div class="sub-text">他エリアでの撮影は固くお断りいたします。</div>
+        </div>
+    </div>
+</li>
                 </ul>
             </div>
         </section>
@@ -138,11 +158,11 @@
             </div>
         </section>
         
-        <section id="access" class="container fade-in">
+        <section id="'acce'ss" class="container fade-in">
             <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> アクセス</h2>
             <div class="access-content">
                 <p><strong>聖徳学園高等学校</strong><br>〒180-8601  東京都武蔵野市境南町 2丁目11-8</p>
-                <p>電車: JR中央線・西武多摩川線「武蔵境駅」より徒歩5分<br>バス: 「武蔵境駅」下車10分</p>
+                <p>電車: JR中央線・西武多摩川線「武蔵境駅」より徒歩5分<br>バス: 「境南二丁目」下車3分</p>
                 
                 <div class="map-placeholder">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.076231284088!2d139.54768228463195!3d35.69741102453456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ef9836a71f31%3A0xa75c007801d0ae19!2z6IGW5b6z5a2m5ZyS5Lit5a2m44O76auY562J5a2m5qCh!5e1!3m2!1sja!2sjp!4v1763621265901!5m2!1sja!2sjp" width="600" height="500" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -153,13 +173,12 @@
 
     <footer>
         <div class="sns-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
         <p>© 2026 聖徳学園中学・高等学校 生徒会</p>
     </footer>
 
     <div id="modal" class="modal">
-        <span class="close-btn">×</span>
+        <span class="close-btn"></span>
         <div class="modal-content">
             <img id="modal-img" src="" alt="企画画像">
             <div class="modal-text">

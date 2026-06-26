@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>企画一覧 | 太子祭20266</title>
+    <title>クラス企画 | 聖徳学園高等学校 太子祭2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=RocknRoll+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -24,39 +24,26 @@
         <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">TOP</a></li>
-                <li><a href="projects.html" class="active">企画一覧</a></li>
-                <li><a href="timetable.html">タイムテーブル</a></li>
+                <li><a href="projects.html">企画一覧</a></li>
+                <li><a href="timetable.html" class="active">タイムテーブル</a></li>
             </ul>
         </nav>
     </header>
 
- <main>
+     <main>
         <div class="page-header">
-            <h1>企画一覧</h1>
-            <p>クラス・部活・有志団体の出し物をすべて紹介！</p>
+            <h1><i class="fas fa-th-large"></i> クラス企画特集</h1>
+            <p>このページでは各学年ごとに企画を紹介します！</p>
         </div>
-        
-        <!-- <div class="center-box">
-        <p>こちらから各特集へ遷移することができます！</p>
-        </div>
-        <div style="margin: -5px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <a href="spot-class.html" class="btn-primary"></i> クラス特集へ</a>
-            <a href="spot-club.html" class="btn-primary"></i> 部活特集へ</a>
-        </div> -->
-        
-        <section class="container fade-in">
+         <section class="container fade-in">
 
             <div class="filter-wrapper">
                 
-                <div class="filter-buttons" style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
-                    <button class="filter-btn" data-target="attraction">遊ぶ</button>
-                    <button class="filter-btn" data-target="exhibition">展示・公演</button>
-                    
-                    <span class="filter-divider" style="color: #ccc; margin: 0 5px; font-weight: bold;">｜</span>
-                    
-                    <button class="filter-btn" data-target="class">クラス</button>
-                    <button class="filter-btn" data-target="club">部活</button>
-                    <button class="filter-btn" data-target="volunteer">有志</button>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="food">飲食</button>
+                    <button class="filter-btn" data-filter="attraction">遊ぶ</button>
+                    <button class="filter-btn" data-filter="exhibition">展示・公演</button>
                 </div>
 
                 <div class="search-box">
@@ -68,7 +55,7 @@
             
             <div class="grid-container">
                 <div class="card project-item" onclick="openModal(this)" 
-                     data-category="attraction class"
+                     data-category="attraction"
                      data-title="1-1 セレスティアル・キャバーン・ザ・ライド" 
                      data-image="images/class/high1-1.png" 
                      data-tag="アトラクション" 
@@ -85,7 +72,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="card project-item" onclick="openModal(this)"
+                <div class="card project-item" onclick="openModal(this)"
                      data-category="food"
                      data-title="3-B 激辛カレー"
                      data-image="images/curry.jpg"
@@ -101,10 +88,10 @@
                         <h3>3-B 激辛カレー</h3>
                         <p>スパイスから調合した本格派。完食者には特典あり！</p>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="card project-item" onclick="openModal(this)"
-                     data-category="attraction class"
+                     data-category="attraction"
                      data-title="2-C 脱出ゲーム"
                      data-image="images/escape.jpg"
                      data-tag="アトラクション"
@@ -122,7 +109,7 @@
                 </div>
 
                 <div class="card project-item" onclick="openModal(this)"
-                     data-category="attraction class"
+                     data-category="attraction"
                      data-title="2-D 縁日ワールド"
                      data-image="images/festival.jpg"
                      data-tag="アトラクション"
@@ -140,7 +127,7 @@
                 </div>
 
                 <div class="card project-item" onclick="openModal(this)"
-                     data-category="exhibition class"
+                     data-category="exhibition"
                      data-title="美術部 作品展"
                      data-image="images/art.jpg"
                      data-tag="展示"
@@ -158,7 +145,7 @@
                 </div>
 
                 <div class="card project-item" onclick="openModal(this)"
-                     data-category="exhibition club"
+                     data-category="exhibition"
                      data-title="ダンス部公演"
                      data-image="images/dance.jpg"
                      data-tag="公演"
@@ -177,26 +164,10 @@
 
             </div>
         </section>
-
-        <div style="text-align: center; margin: 50px 0;">
-            <a href="index.html" class="btn-primary"><i class="fas fa-arrow-left"></i> TOPへ戻る</a>
-        </div>
-
     </main>
     <footer>
         <p>© 2026 聖徳学園中学・高等学校 生徒会</p>
     </footer>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img id="modal-img" src="" alt="企画画像">
-            <div class="modal-text">
-                <h2 id="modal-title">企画タイトル</h2>
-                <p class="modal-meta"><span id="modal-tag" class="tag">タグ</span></p>
-                <p id="modal-desc">説明文</p>
-            </div>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>

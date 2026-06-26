@@ -19,6 +19,49 @@ body {
     line-height: 1.6;
 }
 
+.center-box {
+    width: 100%;             /* 横幅 */
+    height: 100px;           /* 縦幅（お好みの高さ） */
+
+    /* 👇 これをいれるだけで真ん中になります */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+    /* お好みで文字のデザイン */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #292F36;
+}
+.info-row {
+    display: flex;
+    align-items: flex-start; /* アイコンと1行目の上端を揃える */
+    gap: 12px;               /* アイコンとテキストの間のスキマ（お好みで調整） */
+    padding: 15px 0;
+}
+
+.info-icon {
+    font-weight: bold;
+    color: #ff6b6b;          /* 赤ピンク色 */
+    white-space: nowrap;     /* アイコンが途中で改行されるのを防ぐ */
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;  /* テキストを縦に2行並べる */
+    gap: 6px;                /* 1行目と2行目の上下のスキマ */
+}
+
+.main-text {
+    font-weight: bold;
+    color: #333;
+}
+
+.sub-text {
+    color: #333;
+    font-size: 0.95rem;      /* 2行目を少し小さくする場合 */
+}
+
 /* =========================================
    2. ヘッダー
    ========================================= */
@@ -144,7 +187,7 @@ nav a:hover, nav a.active {
     background-image: url('images/display-2-600x400.png'); 
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.4); 
     background-blend-mode: darken;
     text-align: center;
     padding: 100px 20px;
@@ -534,8 +577,6 @@ footer {
     font-weight: bold;
     color: #222;
 }
-    }
-}
 /* =========================================
    タイムテーブル（時間ピッタリ絶対配置パッチ）
    ========================================= */
@@ -572,13 +613,217 @@ footer {
 }
 
 /* =========================================
-   雨の日プログラム ＆ 隙間調整スタイル
+   タイムテーブル位置・隙間の自動調整スタイル
    ========================================= */
+
+/* すべてのカード：時間軸（グリッド）の正確さを保ったまま、カード同士がくっつかないように上下に隙間を作る */
+.matrix-card {
+    box-sizing: border-box;
+    border-top: 3px solid transparent !important;   /* 上側に透明な隙間を作ってクッションにする */
+    border-bottom: 3px solid transparent !important;/* 下側に透明な隙間を作ってクッションにする */
+    background-clip: padding-box !important;        /* 背景色が透明な隙間にはみ出さないようにする */
+}
 
 /* （雨）カードの背景を薄く（半透明に）する */
 .matrix-card.rain-card {
-    background-color: rgba(255, 255, 255, 0.55) !important; /* 白背景を薄くして透けさせる */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 影も控えめに */
-    border: 1px dashed rgba(0, 0, 0, 0.2); /* 境界線を点線にして区別 */
-    color: #444; /* 文字色を少しだけ優しく */
+    background-color: rgba(255, 255, 255, 0.6) !important; /* 白背景を薄くしてステージカラーを透けさせる */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04); /* 影を控えめにして馴染ませる */
+    color: #444; /* 文字色を少し優しく */
+    position: relative;
+}
+
+/* （雨）カードの内側にオシャレな点線の枠線をつける（background-clipの影響を受けない方法） */
+.matrix-card.rain-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px dashed rgba(0, 0, 0, 0.25); /* 内側に綺麗な点線を描く */
+    border-radius: 6px; /* カードの角丸にフィットさせる */
+    pointer-events: none; /* クリックイベントを邪魔しない */
+}
+
+/* =========================================
+   自慢したくなるオシャレなタブボタン（カプセル型）
+   ========================================= */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 30px auto;
+    background-color: #eee; /* 背景のベースとなる薄いグレー */
+    padding: 6px;
+    border-radius: 40px;    /* 完全なカプセル型 */
+    max-width: 340px;       /* ボタン全体の横幅 */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.07); /* 内側の影で凹みを表現 */
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;            /* 選択されていない時の文字色 */
+    background: transparent;
+    border: none;
+    border-radius: 35px;    /* ボタンも角丸に */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 動きを滑らかに */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* マウスを乗せたとき（PC用） */
+.tab-btn:hover {
+    color: #222;
+}
+
+/* 🔥 アクティブ（選択中）のボタン：ふわっと浮き出る立体デザイン */
+.tab-btn.active {
+    background-color: #ffffff !important; /* 白い塊が浮き上がってくる */
+    color: var(--main-color) !important;  /* 文字色をサイトのテーマピンクに */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important; /* 綺麗な影で立体感を出す */
+    transform: translateY(-1px); /* ほんの少し上に浮く */
+}
+
+/* =========================================
+   【重要】表示・非表示の強制コントロール
+   ========================================= */
+/* 他のどのCSSのバグにも負けないよう「!important」で強制固定します */
+.timetable-content {
+    display: none !important;
+}
+
+/* activeクラスがついている日だけを確実に引っ張り出す */
+.timetable-content.active {
+    display: block !important;
+}
+
+/* =========================================
+   マトリックス型タイムテーブル（場所ごと横並び）
+   ========================================= */
+
+.scroll-instruction {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.timetable-matrix-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.timetable-matrix {
+    display: flex;
+    min-width: 900px;
+    gap: 15px;
+    position: relative; /* 優先時間バーの基準点 */
+}
+
+/* 左端の「時間」列 */
+.time-col {
+    width: 60px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 20 !important; /* 時間の文字を最前面に浮き出させる */
+}
+
+.time-slot {
+    height: 120px !important; /* 1時間 ＝ 120px */
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95rem;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    font-family: 'RocknRoll One', sans-serif;
+    box-sizing: border-box;
+}
+
+/* 各場所の列 */
+.location-col {
+    flex: 1;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.location-col.pink-bg { background-color: #FF9EBB; }
+.location-col.blue-bg { background-color: #82B3D5; }
+.location-col.red-bg { background-color: #FF7676; }
+.location-col.green-bg { background-color: #66C282; }
+
+.matrix-header {
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* 企画の白いカード */
+.matrix-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.m-time {
+    font-size: 0.75rem;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.m-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.2;
+}
+
+/* 💡 クラス優先時間の白い四角（1時間240pxの点線に完全に合わせるパッチ） */
+.priority-overlay-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 530px;     /* 1日目・2日目の11:00の点線位置にジャストフィット */
+    height: 240px;  /* 11:00〜13:00の2時間分（240px）に固定 */
+    background-color: rgba(255, 255, 255, 0.96); 
+    border-top: 2px dashed #ff6b6b;
+    border-bottom: 2px dashed #ff6b6b;
+    z-index: 10;    /* 時間軸(20)の下、背景の上 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.priority-overlay-bar span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    letter-spacing: 2px;
+    background: #fff;
+    padding: 4px 16px;
+    border-radius: 30px;
+    border: 1px solid #ff6b6b;
 }

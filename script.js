@@ -77,47 +77,105 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const projectItems = document.querySelectorAll('.project-item');
 const searchInput = document.getElementById('search-input');
 
-let currentCategory = 'all';
-let currentSearchTerm = '';
+// 💡 絞り込み（ボタン）と検索（文字）を両方同時に処理する関数
+function filterProjects() {
+    if (projectItems.length === 0) return;
 
-function filterItems() {
-    projectItems.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        const itemTitle = item.getAttribute('data-title') || '';
-        const itemDesc = item.getAttribute('data-desc') || '';
-        const itemText = (itemTitle + itemDesc).toLowerCase();
+    // 1. 左右のグループごとに、現在ONになっているボタンを集める
+    const activeLeft = [];
+    const activeRight = [];
 
-        const isCategoryMatch = (currentCategory === 'all' || itemCategory === currentCategory);
-        const isSearchMatch = (currentSearchTerm === '' || itemText.includes(currentSearchTerm));
+    // 左側のグループのキーワード（内容）
+    const leftTargets = ['attraction', 'exhibition'];
+    // 右側のグループのキーワード（主体）
+    const rightTargets = ['class', 'club', 'volunteer'];
 
-        if (isCategoryMatch && isSearchMatch) {
-            item.style.display = 'flex';
-            setTimeout(() => { item.style.opacity = '1'; }, 50);
+    filterBtns.forEach(btn => {
+        if (btn.classList.contains('active')) {
+            const target = btn.getAttribute('data-target');
+            // 押されたボタンが左右どちらのグループか判定して振り分ける
+            if (leftTargets.includes(target)) {
+                activeLeft.push(target);
+            } else if (rightTargets.includes(target)) {
+                activeRight.push(target);
+            }
+        }
+    });
+
+    // 2. 検索窓の文字を取得
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    // 3. すべてのカードをチェックして表示/非表示を切り替え
+    projectItems.forEach(card => {
+        const cardCategoryStr = card.getAttribute('data-category') || '';
+        const cardCategories = cardCategoryStr.split(' '); // スペース区切りのカテゴリを分割
+
+        const cardTitle = card.getAttribute('data-title') ? card.getAttribute('data-title').toLowerCase() : '';
+        
+        // 💡 左側の条件：何も選択されていないか、選択されたものが含まれているか
+        const isLeftMatch = (activeLeft.length === 0) || activeLeft.some(cat => cardCategories.includes(cat));
+        
+        // 💡 右側の条件：何も選択されていないか、選択されたものが含まれているか
+        const isRightMatch = (activeRight.length === 0) || activeRight.some(cat => cardCategories.includes(cat));
+        
+        // 💡 検索文字の条件：空欄か、タイトルに文字が含まれているか
+        const isSearchMatch = (searchTerm === '') || cardTitle.includes(searchTerm);
+
+        // 🔥 すべての条件（左側 AND 右側 AND 検索窓）を同時にクリアしたものだけ表示！
+        if (isLeftMatch && isRightMatch && isSearchMatch) {
+            card.style.display = 'block';
         } else {
-            item.style.display = 'none';
-            item.style.opacity = '0';
+            card.style.display = 'none';
         }
     });
 }
 
+// 💡 ボタンがクリックされたときの処理
 if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentCategory = btn.getAttribute('data-filter');
-            filterItems();
+    // 左側と右側のグループ定義
+    const leftTargets = ['attraction', 'exhibition'];
+    const rightTargets = ['class', 'club', 'volunteer'];
+
+    filterBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            const target = button.getAttribute('data-target');
+
+            // 1. すでに自分がactive（選択中）なら、OFFにするだけ
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
+            } else {
+                // 2. 自分が選択されていなかった場合、同じグループの他のボタンのactiveを消す（単一選択・後勝ち）
+                if (leftTargets.includes(target)) {
+                    // 左側グループの他のボタンを解除
+                    filterBtns.forEach(btn => {
+                        if (leftTargets.includes(btn.getAttribute('data-target'))) {
+                            btn.classList.remove('active');
+                        }
+                    });
+                } else if (rightTargets.includes(target)) {
+                    // 右側グループの他のボタンを解除
+                    filterBtns.forEach(btn => {
+                        if (rightTargets.includes(btn.getAttribute('data-target'))) {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+                // 3. そのあと、新しく押されたボタンをONにする
+                button.classList.add('active');
+            }
+
+            // 4. 画面の表示を更新
+            filterProjects();
         });
     });
 }
 
+// 💡 検索窓に入力されたときの処理
 if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        currentSearchTerm = e.target.value.toLowerCase().trim();
-        filterItems();
+    searchInput.addEventListener('input', () => {
+        filterProjects(); // 画面の表示を更新
     });
 }
-
 
 // ==============================================
 // 5. モーダルウィンドウの制御
@@ -199,3 +257,4 @@ if (tabBtns.length > 0) {
         });
     });
 }
+
