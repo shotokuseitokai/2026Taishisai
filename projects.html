@@ -34,7 +34,7 @@
  <main>
         <div class="page-header">
             <h1>企画一覧</h1>
-            <p>クラス・部活・有志団体の出し物をすべて紹介！</p>
+            <p>クラス・部活・有志団体の出し物をすべて紹介！</br>クリックで詳細を確認することができます！</p>
         </div>
         
         <section class="container fade-in">
@@ -42,14 +42,18 @@
             <div class="filter-wrapper">
                 
                 <div class="filter-buttons" style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
-                    <button class="filter-btn" data-target="attraction">遊ぶ</button>
-                    <button class="filter-btn" data-target="exhibition">展示・公演</button>
+                    <button class="filter-btn" data-target="attraction">アトラクション</button>
+                    <button class="filter-btn" data-target="escape">脱出</button>
+                    <button class="filter-btn" data-target="casino">カジノ</button>
+                    <button class="filter-btn" data-target="exhibition">展示</button>
+                    <button class="filter-btn" data-target="performance">パフォーマンス</button>
+                    
                     
                     <span class="filter-divider" style="color: #ccc; margin: 0 5px; font-weight: bold;">｜</span>
                     
                     <button class="filter-btn" data-target="class">クラス</button>
                     <button class="filter-btn" data-target="club">部活</button>
-                    <button class="filter-btn" data-target="volunteer">有志</button>
+                    <button class="filter-btn" data-target="volunteer">有志等</button>
                 </div>
 
                 <div class="search-box">
@@ -61,92 +65,782 @@
             
             <div class="grid-container">
                 <div class="card project-item" onclick="openModal(this)" 
+                     data-category="performance class"
+                     data-title="中1-1｜名探偵コナソ" 
+                     data-image="images/class/middle1-1.jpg" 
+                     data-tag="劇" 
+                     data-tag-class="performance"
+                     data-desc="ミステリー系の劇をクラスでします！&#10;たくさんの謎解きを是非お楽しみください！&#10;1年1組でお待ちしています！">
+                    
+                    <div class="card-img" style="background-color: #FA5425;">
+                        <img src="images/class/middle1-1.jpg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">劇</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中1-1</span>
+                        </div>
+                        <h3>中1-1｜名探偵コナソ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
                      data-category="attraction class"
-                     data-title="1-1 セレスティアル・キャバーン・ザ・ライド" 
+                     data-title="中1-2｜ショットガン！×10"
+                     data-image="images/class/middle1-2.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                         <img src="images/class/middle1-2.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中1-2</span>
+                        </div>
+                        <h3>中1-2｜ショットガン！×10</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="performance class"
+                     data-title="中1-3｜ミュージカル『インサイド・ヘッド』" 
+                     data-image="images/class/middle1-3.png" 
+                     data-tag="劇" 
+                     data-tag-class="performance"
+                     data-desc="私たち1年3組はミュージカル「インサイドヘッド」を行います。思春期の私たちの本音を打ち明ける笑いあり、涙ありのミュージカルになっています！ぜひ見に来てください！">
+                    
+                    <div class="card-img" style="background-color: #ECF573;">
+                         <img src="images/class/middle1-3.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">劇</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中1-3</span>
+                        </div>
+                        <h3>中1-3｜ミュージカル『インサイド・ヘッド』</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="exhibition class"
+                     data-title="中2-1｜ばかっこいい2年1組の日常" 
+                     data-image="images/class/middle2-1.png" 
+                     data-tag="上映" 
+                     data-tag-class="exhibit"
+                     data-desc="2年1組は「バカッコイイ日常」をテーマに､普段の日常の中にある動作を面白く､そしてカッコよく表現します。フォトスポットも用意しています。私たちの「バカッコイイ日常」の世界観をぜひご覧ください！">
+                    
+                    <div class="card-img" style="background-color: #FFA1BD;">
+                         <img src="images/class/middle2-1.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">上映</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中2-1</span>
+                        </div>
+                        <h3>中2-1｜ばかっこいい2年1組の日常</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="中2-2｜2-2パーク 〜撮る,見る,遊ぶ〜"
+                     data-image="images/class/middle2-2.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="画面上で動く“昔の自分”からの問いかけ。挑戦する私たちのドキュメンタリー映画を観たら、ゲームに挑んでコインをGET！限定プリクラで思い出を刻もう。観る・遊ぶ・撮る、私たちの物語を体験せよ！">
+                    
+                    <div class="card-img" style="background-color: #A02F6A;">
+                         <img src="images/class/middle2-2.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中2-2</span>
+                        </div>
+                        <h3>中2-2｜2-2パーク 〜撮る・見る・遊ぶ〜</h3>
+                    </div>
+                </div>                
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="中2-3｜トロッコシューティング（仮）"
+                     data-image="images/class/middle2-3.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #4c6cb3;">
+                         <img src="images/class/middle2-3.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中2-3</span>
+                        </div>
+                        <h3>中2-3｜トロッコシューティング（仮）</h3>
+                    </div>
+                </div>   
+                
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="escape class"
+                     data-title="中3-1｜トロッコアドベンチャー"
+                     data-image="images/class/middle3-1.jpeg" 
+                     data-tag="脱出" 
+                     data-tag-class="escape"
+                     data-desc="トロッコに乗って出発！行く先々で現れる問題を解きながらゴールを目指そう!あなたはすべて解いてゴールまでたどり着けるか！？友達や家族と力を合わせても、一人で挑戦するもよし！挑戦者募集中！！">
+                    
+                    <div class="card-img" style="background-color: #18D69A;">
+                         <img src="images/class/middle3-1.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag escape">脱出</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中3-1</span>
+                        </div>
+                        <h3>中3-1｜トロッコアドベンチャー</h3>
+                    </div>
+                </div>  
+                
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="中3-2｜ウミガメ・トーク"
+                     data-image="images/class/middle3-2.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="S.S.コロンブス号の海底展望室でウミガメのグラッシュと楽しくお話しよう！人間のことをもっと知ろうとウミガメのグラッシュがやってきます。世紀の発明品ハイドロポンプフォンを使って楽しくおしゃべりしよう！">
+                    
+                    <div class="card-img" style="background-color: #FA5425;">
+                         <img src="images/class/middle3-2.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中3-2</span>
+                        </div>
+                        <h3>中3-2｜ウミガメ・トーク</h3>
+                    </div>
+                </div>  
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="escape class"
+                     data-title="中3-3｜闇堕ち温泉くん〜りょういきてんかい編〜"
+                     data-image="images/class/middle3-3.jpeg" 
+                     data-tag="迷路" 
+                     data-tag-class="escape"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                         <img src="images/class/middle3-3.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag escape">迷路</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中3-3</span>
+                        </div>
+                        <h3>中3-3｜闇堕ち温泉くん〜りょういきてんかい編〜</h3>
+                    </div>
+                </div>
+
+                 <div class="card project-item" onclick="openModal(this)" 
+                     data-category="escape class"
+                     data-title="中3-4｜美味しい謎を召し上がれ♡〜もえもえ♡メイド脱出げーむ〜"
+                     data-image="images/class/middle3-4.jpeg" 
+                     data-tag="脱出" 
+                     data-tag-class="escape"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #ECF573;">
+                         <img src="images/class/middle3-4.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag escape">脱出</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 中3-4</span>
+                        </div>
+                        <h3>中3-4｜美味しい謎を召し上がれ♡〜もえもえ♡メイド脱出げーむ〜</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高1-1｜留年確定!?〜回答を怪盗せよ〜"
                      data-image="images/class/high1-1.png" 
                      data-tag="アトラクション" 
                      data-tag-class="game"
-                     data-desc="探検隊の一員として「天空の洞窟」へと調査しに行った先に待ち受けるのは…&#10;「洞窟」と「天空」をコンセプトにした、塩ビパイプと木材で造られた本格的な線路上を走行するローラーコースターです！">
+                     data-desc="このままでは留年確定？！留年を回避するために職員室からテストの解答を盗もう！その在処は謎を解くとわかるかも！でも中には警備員が見張ってます。見つからないように解答を怪盗せよ！">
                     
-                    <div class="card-img">
+                    <div class="card-img" style="background-color: #FFA1BD;">
                          <img src="images/class/high1-1.png" alt="画像">
                     </div>
                     <div class="card-body">
-                        <span class="tag game">アトラクション</span>
-                        <h3>1-1 セレスティアル・キャバーン</h3>
-                        <p>教室全体を使った巨大ジェットコースターが登場！</p>
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高1-1</span>
+                        </div>
+                        <h3>高1-1｜留年確定!?〜回答を怪盗せよ〜</h3>
                     </div>
                 </div>
 
-                <div class="card project-item" onclick="openModal(this)"
-                     data-category="attraction class"
-                     data-title="2-C 脱出ゲーム"
-                     data-image="images/escape.jpg"
-                     data-tag="アトラクション"
-                     data-tag-class="game"
-                     data-desc="理科室からの脱出...制限時間内に謎を解け！">
-                     
-                    <div class="card-img" style="background-color: #a18cd1;">
-                        <span>画像</span>
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="performance class"
+                     data-title="高1-2｜白雪姫"
+                     data-image="images/class/high1-2.jpeg" 
+                     data-tag="劇" 
+                     data-tag-class="performance"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #A02F6A;">
+                         <img src="images/class/high1-2.jpeg" alt="画像">
                     </div>
                     <div class="card-body">
-                        <span class="tag game">アトラクション</span>
-                        <h3>2-C 脱出ゲーム</h3>
-                        <p>理科室からの脱出...制限時間内に謎を解け！</p>
+                        <div class="card-meta">
+                            <span class="tag performance">劇</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> !!!要確認!!!</span>
+                        </div>
+                        <h3>高1-2｜白雪姫</h3>
                     </div>
                 </div>
 
-                <div class="card project-item" onclick="openModal(this)"
-                     data-category="attraction class"
-                     data-title="2-D 縁日ワールド"
-                     data-image="images/festival.jpg"
-                     data-tag="アトラクション"
-                     data-tag-class="game"
-                     data-desc="射的・輪投げ・スーパーボールすくい。景品ゲット！">
-                     
-                    <div class="card-img" style="background-color: #89f7fe;">
-                        <span>画像</span>
-                    </div>
-                    <div class="card-body">
-                        <span class="tag game">アトラクション</span>
-                        <h3>2-D 縁日ワールド</h3>
-                        <p>射的・輪投げ・スーパーボールすくい。景品ゲット！</p>
-                    </div>
-                </div>
-
-                <div class="card project-item" onclick="openModal(this)"
+                <div class="card project-item" onclick="openModal(this)" 
                      data-category="exhibition class"
-                     data-title="美術部 作品展"
-                     data-image="images/art.jpg"
-                     data-tag="展示"
+                     data-title="高1-3｜相席カフェ"
+                     data-image="images/class/high1-3.png" 
+                     data-tag="休憩所" 
                      data-tag-class="exhibit"
-                     data-desc="油絵からデジタルアートまで展示。ポストカード販売も。">
-                     
-                    <div class="card-img" style="background-color: #fbc2eb;">
-                        <span>画像</span>
+                     data-desc="新しい出会い、探してみませんか？当クラスの企画は相席スタイル！偶然同じ席になったあの人と楽しくおしゃべり。素敵な青春をここで！">
+                    
+                    <div class="card-img" style="background-color: #4c6cb3;">
+                         <img src="images/class/high1-3.png" alt="画像">
                     </div>
                     <div class="card-body">
-                        <span class="tag exhibit">展示</span>
-                        <h3>美術部 作品展</h3>
-                        <p>油絵からデジタルアートまで展示。ポストカード販売も。</p>
+                        <div class="card-meta">
+                            <span class="tag exhibit">休憩所</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> !!!要確認!!!</span>
+                        </div>
+                        <h3>高1-3｜相席カフェ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="escape class"
+                     data-title="高1-4｜お菓子工場の秘密"
+                     data-image="images/class/high1-4.jpeg" 
+                     data-tag="脱出" 
+                     data-tag-class="escape"
+                     data-desc="閉館したはずのお菓子工場に、なぜか迷い込んでしまったあなた。工場に隠された謎や仕掛けを解き明かし、無事に脱出できるのか？友達と協力して、お菓子工場の秘密を探し出そう！">
+                    
+                    <div class="card-img" style="background-color: #18D69A;">
+                         <img src="images/class/high1-4.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag escape">脱出</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> !!!要確認!!!</span>
+                        </div>
+                        <h3>高1-4｜お菓子工場の秘密</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高1-5,高2-4｜学校であそぼ"
+                     data-image="images/class/high1-5,2-4.png" 
+                     data-tag="エンターテイメント" 
+                     data-tag-class="game"
+                     data-desc="こんにちは！1-5 と2-4 合同の学校であそぼです。本企画は映像とVRを組み合わせたアトラクションです。VRの世界に潜む「何か」を五感で体験する探索型企画です。">
+                    
+                    <div class="card-img" style="background-color: #FA5425;">
+                         <img src="images/class/high1-5,2-4.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">エンターテインメント</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高3-4</span>
+                        </div>
+                        <h3>高1-5,高2-4｜学校であそぼ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高1-6｜罪人を救え モスティーユ牢獄"
+                     data-image="images/class/high1-6.jpeg" 
+                     data-tag="アドベンチャーゲーム" 
+                     data-tag-class="game"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                         <img src="images/class/high1-6.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アドベンチャーゲーム</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高1-6</span>
+                        </div>
+                        <h3>高1-6｜罪人を救え モスティーユ牢獄</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高1-7｜こいストーリーマニア"
+                     data-image="images/class/high1-7.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="入った先はおもちゃの世界。入る勇気はありますか？おもちゃたちと一緒にシューティングゲームに挑戦しよう！でも気をつけて…。アンディが来るかもしれないよ！？">
+                    
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                         <img src="images/class/high1-7.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高1-7</span>
+                        </div>
+                        <h3>高1-7｜こいストーリーマニア</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="casino class"
+                     data-title="高1-8｜18（いっぱつ）逆転カジノ"
+                     data-image="images/class/high1-8.jpeg" 
+                     data-tag="カジノ" 
+                     data-tag-class="casino"
+                     data-desc="競馬やダーツ、ブラックジャックなど5種類のゲームに挑戦！コインを集めて景品獲得を目指す、誰でも楽しめるカジノです。">
+                    
+                    <div class="card-img" style="background-color: #ECF573;">
+                         <img src="images/class/high1-8.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag casino">カジノ</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高1-8</span>
+                        </div>
+                        <h3>高1-8｜18（いっぱつ）逆転カジノ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高1-9｜メイドサバゲー"
+                     data-image="images/class/high1-9.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #FFA1BD;">
+                         <img src="images/class/high1-9.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高1-9</span>
+                        </div>
+                        <h3>高1-9｜メイドサバゲー</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-1｜VS Shimii"
+                     data-image="images/class/high2-1.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="VS嵐の人気企画「コロコロバイキング」「ローリングコインタワー」をアレンジを加えて再現ました！誰でも誰とでも楽しめるゲームぜひお楽しみください｡">
+                    
+                    <div class="card-img" style="background-color: #A02F6A;">
+                         <img src="images/class/high2-1.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-1</span>
+                        </div>
+                        <h3>高2-1｜VS Shimii</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-2｜ワクワク！！遺跡ツアーズ"
+                     data-image="images/class/high2-2.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="観光ツアーとして古代遺跡に訪れた探検者に待っている運命とは…&#10;&#10;本格的なジェットコースター要素とテクニカルなアドンベンチャー要素を合わせた革新的なアトラクションをお楽しみください!!!">
+                    
+                    <div class="card-img" style="background-color: #4c6cb3;">
+                         <img src="images/class/high2-2.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-2</span>
+                        </div>
+                        <h3>高2-2｜ワクワク！！遺跡ツアーズ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-3｜JAN-GO"
+                     data-image="images/class/high2-3.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="夜のアマゾンを舞台に、暗闇に潜む動物たちから空中ブランコで逃げ切れ！次々と現れる動物の気配を感じながら、スリル満点の空中冒険に挑戦しよう！">
+                    
+                    <div class="card-img" style="background-color: #18D69A;">
+                         <img src="images/class/high2-3.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-3</span>
+                        </div>
+                        <h3>高2-3｜JAN-GO</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="escape class"
+                     data-title="高2-5｜和風オカルト脱出ゲーム"
+                     data-image="images/class/high2-5.png" 
+                     data-tag="脱出" 
+                     data-tag-class="escape"
+                     data-desc="いわくつきの神社を舞台にした、謎解き×アクション型アトラクション！賽銭泥棒に挑む中で数々の暗号を解き、迫りくる困難を乗り越え、最後の選択へ挑め……。">
+                    
+                    <div class="card-img" style="background-color: #919106;">
+                         <img src="images/class/high2-5.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag escape">脱出</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-5</span>
+                        </div>
+                        <h3>高2-5｜和風オカルト脱出ゲーム</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-6｜RUSマニ"
+                     data-image="images/class/high2-6.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="私たちはディズニーのシューティングアトラクションを再現しました！&#10;二人乗りで作ったので気になるあの子や仲の良い友達などとぜひお越しください&#10;「おもちゃの世界へ出発〜！」">
+                    
+                    <div class="card-img" style="background-color: #919106;">
+                         <img src="images/class/high2-6.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-6</span>
+                        </div>
+                        <h3>高2-6｜RUSマニ</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-7｜Pirates' Voyage"
+                     data-image="images/class/high2-7.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="None">
+                    
+                    <div class="card-img" style="background-color: #919106;">
+                         <img src="images/class/high2-7.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-7</span>
+                        </div>
+                        <h3>高2-7｜Pirates' Voyage</h3>
+                    </div>
+                </div>
+                
+                <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-8｜謎解き！鏡の迷路"
+                     data-image="images/class/high2-8.png" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="壁や柱の多くに鏡が使われた迷路アトラクションに謎解き要素を加えた不気味な館からの脱出ゲーム！あくまで都市伝説ですが、この館には化け物が出るとか、出ないとか？&#10;制限時間内に謎を解いてこの館から脱出せよ！">
+                    
+                    <div class="card-img" style="background-color: #919106;">
+                         <img src="images/class/high2-8.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高2-8</span>
+                        </div>
+                        <h3>高2-8｜謎解き！鏡の迷路</h3>
+                    </div>
+                </div>
+                
+                 <div class="card project-item" onclick="openModal(this)" 
+                     data-category="attraction class"
+                     data-title="高2-9｜CODE:09"
+                     data-image="images/class/high2-9.jpeg" 
+                     data-tag="アトラクション" 
+                     data-tag-class="game"
+                     data-desc="研究施設内に散らばった物を鬼から隠れながら集め、ミッションをクリアし時間内に脱出する。">
+                    
+                    <div class="card-img" style="background-color: #919106;">
+                         <img src="images/class/high2-9.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag game">アトラクション</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 高29</span>
+                        </div>
+                        <h3>高2-9｜CODE:09</h3>
                     </div>
                 </div>
 
                 <div class="card project-item" onclick="openModal(this)"
                      data-category="exhibition club"
-                     data-title="ダンス部公演"
-                     data-image="images/dance.jpg"
-                     data-tag="公演"
+                     data-title="美術部｜ビジュツブ　コレクション〜わくわく制作〜"
+                     data-image="images/club/美術部.png"
+                     data-tag="展示"
                      data-tag-class="exhibit"
-                     data-desc="体育館でのパフォーマンス。スケジュールを確認してね！">
+                     data-desc="美術部員による共同制作のリサイクルアートや、さまざまな個人制作の他、美術科による各学年の作品の展示を行っています。たくさんの個性溢れる作品をぜひ、お楽しみください！">
                      
-                    <div class="card-img" style="background-color: #84fab0;">
-                        <span>画像</span>
+                    <div class="card-img" style="background-color: #4c6cb3;">
+                        <img src="images/club/美術部.png" alt="画像">
                     </div>
                     <div class="card-body">
-                        <span class="tag exhibit">公演</span>
-                        <h3>ダンス部公演</h3>
-                        <p>体育館でのパフォーマンス。スケジュールを確認してね！</p>
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Art Lab</span>
+                        </div>
+                        <h3>美術部｜ビジュツブ　コレクション〜わくわく制作〜</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition club"
+                     data-title="競技かるた同好会｜ちはやぶる"
+                     data-image="images/club/競技かるた.png"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="トランプを使い機械音の回数を聞き取って素早く取る新感覚ゲーム「まじかるた」で、競技かるたの駆け引きを初心者でも楽しく、手軽に体験！さらに簡易的かつ本格的な競技かるたも楽しめるので、ぜひ遊びに来てね！">
+                     
+                    <div class="card-img" style="background-color: #18D69A;">
+                        <img src="images/club/競技かるた.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 幽玄庵</span>
+                        </div>
+                        <h3>競技かるた同好会｜ちはやぶる</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition volunteer"
+                     data-title="地域おこしプロジェクト｜地域おこしプロジェクト成果報告会"
+                     data-image="images/club/地域おこしPJ.jpg"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="新潟県阿賀町と武蔵野市を盛り上げる私たち「地域おこしプロジェクト」の活動をご紹介します！活動成果発表やポスター展示、PR動画などたくさんのコンテンツを用意しているのでぜひ気軽にお越しください！">
+                     
+                    <div class="card-img" style="background-color: #FA5425;">
+                        <img src="images/club/地域おこしPJ.jpg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Learning Commons</span>
+                        </div>
+                        <h3>地域おこしプロジェクト｜地域おこしプロジェクト成果報告会</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="performance club"
+                     data-title="吹奏楽部｜吹奏楽部マーチングパフォーマンス"
+                     data-image="images/club/吹奏楽部.jpeg"
+                     data-tag="パフォーマンス"
+                     data-tag-class="performance"
+                     data-desc="こんにちは！吹奏楽部です！&#10;私達はマーチングパフォーマンスとして「夏祭り」「学園天国」「恋するフォーチュンクッキー」を演奏します！この日のために精一杯練習を重ねてきたので、是非聞きにきてください！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/吹奏楽部.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">パフォーマンス</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 校庭（90thホール）</span>
+                        </div>
+                        <h3>吹奏楽部｜吹奏楽部マーチングパフォーマンス</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition club"
+                     data-title="調理手芸部｜調理手芸部展示"
+                     data-image="images/club/調理手芸部.png"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="調理・手芸部では作品の展示を行っております。今年度はパンチングニードル、編み物、レジンの三種類の作品を制作しました。&#10;短い時間の中で協力した成果を是非ご覧ください！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/調理手芸部.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> !!!要確認!!!</span>
+                        </div>
+                        <h3>調理手芸部｜調理手芸部展示</h3>
+                    </div>
+                </div>
+                
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="performance club"
+                     data-title="演劇部｜英雄の葬送"
+                     data-image="images/club/演劇部.jpeg"
+                     data-tag="パフォーマンス"
+                     data-tag-class="performance"
+                     data-desc="こんにちは演劇部です！今回は「英雄の葬送」を演じます。これは第二次世界大戦に巻き込まれ、バラバラになった人間関係を描いた作品となっています。この劇で私たち演劇部を知ってもらえたら嬉しいです。">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/演劇部.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">パフォーマンス</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 講堂</span>
+                        </div>
+                        <h3>演劇部｜英雄の葬送</h3>
+                    </div>
+                </div>
+                
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition volunteer"
+                     data-title="国際交流ボランティア｜世界一周スタンプラリー"
+                     data-image="images/club/国際交流ボランティア.png"
+                     data-tag=""
+                     data-tag-class="exhibit"
+                     data-desc="パスポートを手に校内を巡るスタンプラリーを開催！階段や教室を巡ってスタンプを集めると景品をゲットできます！さらに、LearningCommonsでは民族衣装を着て撮影できるフォトスポットも！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/国際交流ボランティア.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit"></span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Learning Commons</span>
+                        </div>
+                        <h3>国際交流ボランティア｜世界一周スタンプラリー</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="performance club"
+                     data-title="動画研究部｜動研映画館@90周年ホール"
+                     data-image="images/club/動画研究部.png"
+                     data-tag="パフォーマンス"
+                     data-tag-class="performance"
+                     data-desc="今年度で４回目を迎える動研映画館。&#10;夏休みに制作した新作映画の上映を行います。&#10;作品モチーフは避難訓練ならぬ「非難訓練」！&#10;どのようなドラマになるか？ 乞うご期待！&#10;90周年記念ホールで待ってます！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/動画研究部.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">パフォーマンス</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> 90thホール</span>
+                        </div>
+                        <h3>動画研究部｜動研映画館@90周年ホール</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition club"
+                     data-title="華道部｜華道部の作品展"
+                     data-image="images/club/華道部.jpeg"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="華道部は部員達が生けたお花を展示します。展示を見に来てくださった方には、1人1本ですが、お花を挿していき、みんなで立派なフラワーアレンジメントを作成できる生け込み体験を行います。ぜひ来てください！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/華道部.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Learning Commons</span>
+                        </div>
+                        <h3>華道部｜華道部の作品展</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="performance club"
+                     data-title="合唱部｜「#真相をお話しします」"
+                     data-image="images/club/合唱部.jpeg"
+                     data-tag="パフォーマンス"
+                     data-tag-class="performance"
+                     data-desc="最近身近な存在になってきた「SNS」&#10;そんな「SNS」をテーマにした劇です。&#10;合唱部員がその事件の真相をお話しします。&#10;もう一度「SNS」について考えてみませんか？">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/合唱部.jpeg" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag performance">パフォーマンス</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Music Lab</span>
+                        </div>
+                        <h3>合唱部｜「#真相をお話しします」</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition club"
+                     data-title="漫画研究部｜ようこそ漫研へ"
+                     data-image="images/club/漫画研究部.png"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="部員たちが描いたイラストの部誌を配布します&#10;クイズに答えて景品がもらえるかも…？&#10;ソーシャルラボでお待ちしております〜&#10;(13号階3階)">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/漫画研究部.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Social Lab</span>
+                        </div>
+                        <h3>漫画研究部｜ようこそ漫研へ！</h3>
+                    </div>
+                </div>
+
+                <div class="card project-item" onclick="openModal(this)"
+                     data-category="exhibition club"
+                     data-title="鉄道研究部｜鉄研れーるランド"
+                     data-image="images/club/鉄道研究部.png"
+                     data-tag="展示"
+                     data-tag-class="exhibit"
+                     data-desc="鉄道模型コンテスト出展作品やプラレール、側面LED等の展示に加え、Nゲージ運転体験、本格シミュレータ、発車メロディ体験などを実施！「展示」と「体験」で鉄道の魅力を体感できます。ぜひお越しください！">
+                     
+                    <div class="card-img" style="background-color: #FB8B5B;">
+                        <img src="images/club/鉄道研究部.png" alt="画像">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="tag exhibit">展示</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Global Lab</span>
+                        </div>
+                        <h3>鉄道研究部｜鉄研れーるランド</h3>
                     </div>
                 </div>
 

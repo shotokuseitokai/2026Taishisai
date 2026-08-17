@@ -86,7 +86,7 @@ function filterProjects() {
     const activeRight = [];
 
     // 左側のグループのキーワード（内容）
-    const leftTargets = ['attraction', 'exhibition'];
+    const leftTargets = ['attraction', 'escape','exhibition','casino','performance'];
     // 右側のグループのキーワード（主体）
     const rightTargets = ['class', 'club', 'volunteer'];
 
@@ -110,7 +110,11 @@ function filterProjects() {
         const cardCategoryStr = card.getAttribute('data-category') || '';
         const cardCategories = cardCategoryStr.split(' '); // スペース区切りのカテゴリを分割
 
-        const cardTitle = card.getAttribute('data-title') ? card.getAttribute('data-title').toLowerCase() : '';
+        // 検索対象（タイトル、説明文、タグ、場所）をそれぞれ取得
+        const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
+        const cardDesc = (card.getAttribute('data-desc') || '').toLowerCase();
+        const cardTag = (card.getAttribute('data-tag') || '').toLowerCase();
+        const cardLocation = card.querySelector('.location') ? card.querySelector('.location').textContent.toLowerCase() : '';
         
         // 💡 左側の条件：何も選択されていないか、選択されたものが含まれているか
         const isLeftMatch = (activeLeft.length === 0) || activeLeft.some(cat => cardCategories.includes(cat));
@@ -118,8 +122,12 @@ function filterProjects() {
         // 💡 右側の条件：何も選択されていないか、選択されたものが含まれているか
         const isRightMatch = (activeRight.length === 0) || activeRight.some(cat => cardCategories.includes(cat));
         
-        // 💡 検索文字の条件：空欄か、タイトルに文字が含まれているか
-        const isSearchMatch = (searchTerm === '') || cardTitle.includes(searchTerm);
+        // 💡 検索文字の条件：タイトル・説明文・タグ・場所のいずれかにマッチすればOK
+        const isSearchMatch = (searchTerm === '') || 
+            cardTitle.includes(searchTerm) || 
+            cardDesc.includes(searchTerm) || 
+            cardTag.includes(searchTerm) || 
+            cardLocation.includes(searchTerm);
 
         // 🔥 すべての条件（左側 AND 右側 AND 検索窓）を同時にクリアしたものだけ表示！
         if (isLeftMatch && isRightMatch && isSearchMatch) {
@@ -133,7 +141,7 @@ function filterProjects() {
 // 💡 ボタンがクリックされたときの処理
 if (filterBtns.length > 0) {
     // 左側と右側のグループ定義
-    const leftTargets = ['attraction', 'exhibition'];
+    const leftTargets = ['attraction', 'exhibition','escape','casino','performance'];
     const rightTargets = ['class', 'club', 'volunteer'];
 
     filterBtns.forEach(button => {
@@ -258,3 +266,17 @@ if (tabBtns.length > 0) {
     });
 }
 
+// ==============================================
+// マップ
+// ==============================================
+const mapContent = document.getElementById('map-content');
+if (mapContent) {
+    const panzoom = Panzoom(mapContent, {
+        maxScale: 3,      // 最大何倍まで拡大できるか
+        minScale: 0.5,    // 最小どこまで縮小できるか
+        contain: 'outside' // 画面外に吹っ飛んでいかないようにする設定
+    });
+
+    // パソコンのマウスホイールでも拡大縮小できるようにする
+    mapContent.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+}

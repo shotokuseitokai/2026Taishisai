@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header id="header">
         <div class="logo">
             <a href="index.html" style="text-decoration: none; color: var(--main-color);">
@@ -36,9 +35,28 @@
             <h1><!--<i class="fas fa-th-large"></i>--> マップ</h1>
             <p>各フロアごとにご覧いただけます</p>
         </div>
-    <div class="center-box">
-        <p>鋭意制作中になります。</br>完成まで今しばらくお待ちください。</p>
-    </div>
+
+        <div class="center-box">
+            <p>鋭意制作中になります。</br>完成まで今しばらくお待ちください。</p>
+        </div>
+            <div id="map-wrapper" style="overflow: hidden; width: 100%; height: 700px; position: relative;">
+                <div id="map-content" style="position: relative; width: 1000px; height: 1400px;">
+                <img src="images/校内9マップ.png" style="width: 100%; height: 100%;">
+                <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+
+                <div class="map-pin" style="top: 35%; left: 42%;" 
+                onclick="openModal(this)" 
+                data-title="お化け屋敷" 
+                data-desc="1年A組の最高に怖いお化け屋敷です！">
+                <i class="fas fa-map-marker-alt"></i> </div>
+            
+                <div class="map-pin" style="top: 60%; left: 20%;" onclick="openModal(this)" ...>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+        </div>
+
+    </main>
     <footer>
         <p>© 2026 聖徳学園中学・高等学校 生徒会</p>
     </footer>

@@ -20,19 +20,27 @@ body {
 }
 
 .center-box {
-    width: 100%;             /* 横幅 */
-    height: 100px;           /* 縦幅（お好みの高さ） */
+    width: 100%;
+    height: auto; /* 👈 100px から auto に変更（高さ固定を解除） */
+    margin: 15px;
 
-    /* 👇 これをいれるだけで真ん中になります */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    
-    /* お好みで文字のデザイン */
+    align-items: center; /* 👈 flex-end から center に変更 */
+
+    /* 文字のデザイン */
     font-size: 1.1rem;
     font-weight: bold;
     color: #292F36;
 }
+
+/* 👇 .center-box のすぐ下にこのブロックを追加してください */
+.center-box p {
+    margin: 0; /* Pタグ勝手の上下余白を消す */
+    line-height: 1.5;
+    text-align: center;
+}
+
 .info-row {
     display: flex;
     align-items: flex-start; /* アイコンと1行目の上端を揃える */
@@ -210,6 +218,32 @@ nav a:hover, nav a.active {
     margin: 0;
 }
 
+/* タグと場所を入れる枠 */
+.card-meta {
+    display: flex;
+    align-items: center; /* 縦のズレを中央で揃える */
+    margin-bottom: 10px; /* 下のタイトルとのスキマ */
+}
+
+/* 枠の中に入れたタグの余白をリセット */
+.card-meta .tag {
+    margin-bottom: 0;
+}
+
+/* 実施場所のテキストを右詰めにする */
+.location {
+    margin-left: auto; /* 👈 これが重要！左側の余白を全開にして右端に押しやる */
+    text-align: right; /* 文字自体も右揃えにする */
+    font-size: 0.85rem;
+    color: #666; 
+    font-weight: bold;
+}
+
+/* マップピンのアイコンの色 */
+.location i {
+    color: var(--main-color);
+    margin-right: 4px;
+}
 /* =========================================
    5. メインコンテンツ共通
    ========================================= */
@@ -266,7 +300,7 @@ nav a:hover, nav a.active {
 .card:hover { transform: translateY(-5px); }
 
 .card-img {
-    height: 200px;
+    aspect-ratio: 4 / 3;
     width: 100%;
     background-color: #eee;
     display: flex;
@@ -292,6 +326,9 @@ nav a:hover, nav a.active {
 .tag.food { background: #FF9F1C; }
 .tag.game { background: #2EC4B6; }
 .tag.exhibit { background: #E71D36; }
+.tag.escape { background: #C1B597; }
+.tag.casino { background: #FC7045; }
+.tag.performance { background: #f39800; }
 
 /* =========================================
    7. モーダル & その他
@@ -419,6 +456,49 @@ footer {
     nav ul { flex-direction: column; align-items: center; }
 }
 
+/* ご案内・お願いカードの並び（折り返しOK＆中央寄せ） */
+.notice-grid {
+    display: flex;
+    flex-wrap: wrap; /* 横幅が足りなくなったら自動で折り返す */
+    justify-content: center; /* 折り返した2行目のカードも中央に揃える */
+    gap: 20px; /* カード同士のスキマ */
+    margin-top: 20px;
+}
+
+/* カード1枚ずつのデザイン */
+.notice-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    /* 👇 幅を大きめに設定（幅220px〜260px程度でゆったり表示） */
+    width: 100%;
+    max-width: 260px;
+    flex: 1 1 220px; /* 最小幅220pxを確保して幅広に */
+}
+
+/* アイコン画像 */
+.notice-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* カードの中の文字 */
+.notice-card p {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.5; /* 行間を少し広げて読みやすく */
+}
 
 /* =========================================
    8. 検索ウィンドウ & フィルター調整 (横並び版)
@@ -652,7 +732,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 4px;
-    margin: 30px auto;
+    margin: 15px auto;
     background-color: #eee; /* 背景のベースとなる薄いグレー */
     padding: 6px;
     border-radius: 40px;    /* 完全なカプセル型 */
@@ -826,4 +906,22 @@ footer {
     padding: 4px 16px;
     border-radius: 30px;
     border: 1px solid #ff6b6b;
+}
+
+/* =========================================
+   マップ機能
+   ========================================= */
+   /* ピンのデザインと配置設定 */
+.map-pin {
+    position: absolute;   /* 地図の上で自由な位置に固定する魔法 */
+    font-size: 24px;
+    color: var(--main-color); /* あなたのサイトのピンク色 */
+    cursor: pointer;
+    transform: translate(-50%, -100%); /* ピンの先端を正確な座標に合わせる調整 */
+    z-index: 10;
+}
+
+/* 軽くアニメーションをつけるとリッチになります */
+.map-pin:hover {
+    transform: translate(-50%, -100%) scale(1.2);
 }
