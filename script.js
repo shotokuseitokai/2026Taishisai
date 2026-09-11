@@ -280,3 +280,89 @@ if (mapContent) {
     // パソコンのマウスホイールでも拡大縮小できるようにする
     mapContent.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
 }
+
+let currentProjects = [];
+let currentProjectIndex = 0;
+
+// ヒットボックス定義のクリックイベント部分
+hitboxes.forEach(box => {
+    box.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // 単一データか複数データ(JSON)かを判定
+        if (box.dataset.projects) {
+            currentProjects = JSON.parse(box.dataset.projects);
+        } else {
+            currentProjects = [{
+                title: box.dataset.title || '',
+                place: box.dataset.place || '',
+                desc: box.dataset.desc || '',
+                tag: box.dataset.tag || '',
+                tagClass: box.dataset.tagClass || '',
+                image: box.dataset.image || ''
+            }];
+        }
+
+        currentProjectIndex = 0;
+        updateModalContent();
+        modal.style.display = 'flex';
+    });
+});
+
+// モーダル表示内容の更新関数
+function updateModalContent() {
+    const project = currentProjects[currentProjectIndex];
+
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalPlace').textContent = project.place;
+    document.getElementById('modalDesc').textContent = project.desc;
+
+    // タグ
+    const tagEl = document.getElementById('modalTag');
+    if (project.tag) {
+        tagEl.textContent = project.tag;
+        tagEl.className = 'tag ' + (project.tagClass || '');
+        tagEl.style.display = 'inline-block';
+    } else {
+        tagEl.style.display = 'none';
+    }
+
+    // 画像
+    const imgEl = document.getElementById('modalImage');
+    const imgBox = document.getElementById('modalImgBox');
+    if (project.image) {
+        imgEl.src = project.image;
+        imgBox.style.display = 'block';
+    } else {
+        imgBox.style.display = 'none';
+    }
+
+    // 複数企画がある場合のみナビゲーション矢印を表示
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const counter = document.getElementById('projectCounter');
+
+    if (currentProjects.length > 1) {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        counter.style.display = 'block';
+        counter.textContent = `${currentProjectIndex + 1} / ${currentProjects.length}`;
+    } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        counter.style.display = 'none';
+    }
+}
+
+// 矢印ボタンのイベント
+document.getElementById('prevBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentProjectIndex = (currentProjectIndex - 1 + currentProjects.length) % currentProjects.length;
+    updateModalContent();
+});
+
+document.getElementById('nextBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentProjectIndex = (currentProjectIndex + 1) % currentProjects.length;
+    updateModalContent();
+});
