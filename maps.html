@@ -15,7 +15,7 @@
         .map-controls-wrapper {
             max-width: 900px;
             margin: 0 auto 20px;
-            padding: 0 15px;
+            padding: 15px;
         }
 
         /* 検索・絞り込みエリア */
@@ -101,8 +101,8 @@
         .hitbox {
             position: absolute;
             transform: translate(-50%, -50%) rotate(-34.7deg) skewX(30deg);
-            background: rgba(255, 0, 0, 0.35);
-            border: 2px dashed #ff0000;
+            background: rgba(255, 0, 0, 0.0);
+            border: 0px dashed #ff0000;
             border-radius: 3px;
             cursor: pointer;
             display: flex;
@@ -126,8 +126,8 @@
         }
 
         .hitbox:hover, .hitbox:active {
-            background: rgba(255, 0, 0, 0.75);
-            transform: translate(-50%, -50%) rotate(-34.7deg) skewX(30deg) scale(1.1);
+            background: rgba(255, 0, 0, 0.25);
+            transform: translate(-50%, -50%) rotate(-34.7deg) skewX(30deg) scale(1.05);
             z-index: 30;
         }
 
@@ -268,6 +268,20 @@
         }
 
         .modal-close:hover { background: rgba(0, 0, 0, 0.8); }
+
+        /* スマホ表示時（画面幅768px以下）のみ適用 */
+        @media (max-width: 768px) {
+            .hitbox {
+                font-size: 8px; /* デフォルトの11pxから好みのサイズに変更（例: 8px〜9px） */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hitbox-text {
+                /* 縮小倍率を指定（0.8 = 80%に縮小） */
+                transform: skewX(-30deg) rotate(33deg) scale(0.8);
+            }
+        }
     </style>
 </head>
 <body>
@@ -290,7 +304,7 @@
     </header>
 
     <div class="page-header">
-        <h1>CAMPUS MAP</h1>
+        <h1>MAP</h1>
         <p>校内マップ・企画配置</p>
     </div>
 
@@ -538,7 +552,7 @@
         </div>
 
         <div class="hitbox" 
-             style="top: 21.18359979%; left: 81.54057772%; width: 7.5%; height: 3.6%;"
+            style="top: 17.52191851%; left: 81.1829436%; width: 3.0%; height: 3.6%;"
             data-category="attraction class"
             data-title="高2-2｜アドベンチャー･ザ･ライド〈遺跡の秘宝〉"
             data-image="images/class/high2-2.jpeg" 
@@ -549,7 +563,7 @@
         </div>
 
         <div class="hitbox" 
-             style="top: 17.52191851%; left: 81.1829436%; width: 3.0%; height: 3.6%;"
+            style="top: 21.18359979%; left: 81.54057772%; width: 7.5%; height: 3.6%;"
             data-category="attraction class"
             data-title="高2-3｜JAN-GO"
             data-image="images/class/high2-3.jpeg" 
@@ -612,18 +626,6 @@
             data-tag-class="game"
             data-desc="研究施設内に散らばった物を鬼から隠れながら集め、ミッションをクリアし時間内に脱出する。">
              <span class="hitbox-text">高2-9</span>
-        </div>
-
-        <div class="hitbox" 
-             style="top: 60%; left: 62%; width: 12%; height: 6%;"
-             data-category="performance club"
-             data-title="吹奏楽部｜演奏会"
-             data-tag="音楽"
-             data-tag-class="performance"
-             data-place="5号館 講堂"
-             data-image="images/club/brass.jpg"
-             data-desc="13:00〜14:00にポップスを中心とした演奏を行います！&#10;ぜひお越しください！">
-             <span class="hitbox-text">吹奏楽</span>
         </div>
 
         <div class="hitbox" 
@@ -745,7 +747,7 @@
             data-tag="展示"
             data-tag-class="exhibit"
             data-desc="最近身近な存在になってきた「SNS」\nそんな「SNS」をテーマにした劇です。\n合唱部員がその事件の真相をお話しします。\nもう一度「SNS」について考えてみませんか？">
-            <span class="hitbox-text">鉄道研究部</span>
+            <span class="hitbox-text">合唱部</span>
         </div>
 
         <div class="hitbox" 
@@ -766,14 +768,163 @@
                 "desc": "字に想いを込めて全力で書道パフォーマンスをします。\n是非見に来てください！"
             },
             {
+                "title": "理科実験部｜理科実軒 江草亭",
+                "tag": "パフォーマンス",
+                "tagClass": "performance",
+                "image": "images/club/理科部.jpeg",
+                "desc": "S-lab2で実験の展示やショーをしています。例えば、ビスマスやちりめんモンスターなどをやります。また1日目の最後に校庭でペットボトルロケットを飛ばしたりゾウの歯磨き粉をしたりします。ぜひ来てください"
+            },
+            {
+                "title": "ダンス部｜ダンス部スペシャルステージ2026",
+                "tag": "パフォーマンス",
+                "tagClass": "performance",
+                "image": "images/club/ダンス部.png",
+                "desc": "ヒップホップ、ガールズ、各学年のパフォーマンスなど、様々なジャンルをやります！お時間があったらぜひ見に来てください！！\n待ってます🙌🏻"
+            }]'>
+            <span class="hitbox-text">校庭</span>
+        </div>
+
+        <div class="hitbox" 
+            style="top: 49.69056215%; left: 89.88529115%; width: 8.0%; height: 14%;"
+            data-projects='[
+            {
+                "title": "演劇部｜英雄の葬送",
+                "tag": "パフォーマンス",
+                "tagClass": "performance",
+                "image": "images/club/演劇部.jpeg",
+                "desc": "こんにちは演劇部です！今回は「英雄の葬送」を演じます。これは第二次世界大戦に巻き込まれ、バラバラになった人間関係を描いた作品となっています。この劇で私たち演劇部を知ってもらえたら嬉しいです。"
+            },
+            {
+                "title": "書道部（雨）｜書道パフォーマンス",
+                "tag": "パフォーマンス",
+                "tagClass": "performance",
+                "image": "images/club/書道部.jpeg",
+                "desc": "字に想いを込めて全力で書道パフォーマンスをします。\n是非見に来てください！"
+            },
+            {
+                "title": "ダンス部｜ダンス部スペシャルステージ2026",
+                "tag": "パフォーマンス",
+                "tagClass": "performance",
+                "image": "images/club/ダンス部.png",
+                "desc": "ヒップホップ、ガールズ、各学年のパフォーマンスなど、様々なジャンルをやります！お時間があったらぜひ見に来てください！！\n待ってます🙌🏻"
+            },
+            {
                 "title": "軽音楽部｜軽音楽部太子祭ライブ2026",
                 "tag": "パフォーマンス",
                 "tagClass": "performance",
                 "image": "images/club/軽音楽部.png",
                 "desc": "軽音部の部員たちが、バンド演奏を通して文化祭を盛り上げます。熱いロックから心に響く名曲まで、多彩な音楽をぜひお楽しみください！"
             }]'>
-            <span class="hitbox-text">校庭</span>
+            <span class="hitbox-text">講堂</span>
         </div>
+
+        <div class="hitbox" 
+            style="top: 68.82413615%; left: 41.60476845%; width: 6.0%; height: 8.2%;"
+            data-projects='[
+            {
+                "title": "PTA本部｜太子祭記念クリアファイル",
+                "tag": "展示",
+                "tagClass": "exhibit",
+                "image": "images/club/PTA本部.jpg",
+                "desc": "太子祭記念オリジナルクリアファイルを、かえでホールなどで配布します。各日数量限定。来場者１名様１枚ですが、教職員と聖徳学園中高生は別途配布のため対象外です。"
+            },
+            {
+                "title": "PTA総務｜制服リサイクルバザーとオリジナルグッズ販売",
+                "tag": "展示",
+                "tagClass": "exhibit",
+                "image": "images/club/PTA総務.jpeg",
+                "desc": "制服のリサイクルバザーとオリジナルグッズの販売をします。グッズは過去2年のバザーで好評だった物を再販します。ぜひお待ちしております。"
+            }]'>
+            <span class="hitbox-text">かえでホール</span>
+        </div>
+
+        <div class="hitbox" 
+            style="top: 57.0139247%; left: 71.64603393%; width: 7.3%; height: 4.1%;"
+            data-projects='[
+            {
+                "title": "データサイエンスコース｜データサイエンスコース中間発表会",
+                "tag": "展示",
+                "tagClass": "exhibit",
+                "image": "images/club/データサイエンスコース.png",
+                "desc": "10名の高校生が日頃取り組んできた探究活動の成果を発表します。\nテーマはビジネス、SDGs、未来社会、ゲーム開発など多彩です。\n生徒たちの自由な発想と研究の成果を、ぜひご覧ください。"
+            },
+            {
+                "title": "広報部｜聖徳学園を知ろう！",
+                "tag": "展示",
+                "tagClass": "exhibit",
+                "image": "images/club/広報部.jpg",
+                "desc": "受験生の皆さん\n受験についてわからないこと、質問したいことなどありましたら、ぜひ来てください！\n学校説明動画に加えて、生徒会とのコラボで、クラス・部活動の宣伝動画も流します。"
+            }]'>
+            <span class="hitbox-text">Media room</span>
+        </div>
+
+        <div class="hitbox" 
+             style="top: 40.62661166%; left: 81.35717561%; width: 3.0%; height: 1.8%;"
+            data-category="exhibition club"
+            data-title="書道部｜作品展示"
+            data-image="images/club/書道部.jpeg"
+            data-tag="展示"
+            data-tag-class="exhibit"
+            data-desc="これまで書いてきた作品や、合宿で作った作品などを展示します。&#10;是非見に来てください！">
+             <span class="hitbox-text">書道部</span>
+        </div>
+
+        <div class="hitbox" 
+             style="top: 29.2661166%; left: 81.35717561%; width: 3.0%; height: 1.8%;"
+            data-category="exhibition club"
+            data-title="国語科｜太子祭ペン習字展"
+            data-image="images/club/国語科.png"
+            data-tag="展示"
+            data-tag-class="exhibit" 
+            data-desc="ペン習字の展示を行います">
+             <span class="hitbox-text">国語科</span>
+        </div>
+
+        <div class="hitbox" 
+             style="top: 60.81743167%; left: 27.07015131%; width: 2.8%; height: 5.4%;"
+            data-category="exhibition club"
+            data-title="自由研究｜自由研究"
+            data-image="images/club/自由研究.png"
+            data-tag="展示"
+            data-tag-class="exhibit" 
+            data-desc="今年もさまざまなジャンルの個性あふれる研究・作品が展示されています！&#10;みなさん！ぜひ見に来てください！">
+             <span class="hitbox-text">自由研究</span>
+        </div>
+
+        <div class="hitbox" 
+             style="top: 81.24033007%; left: 42.57679963%; width: 4.0%; height: 4.0%;"
+            data-category="exhibition club"
+            data-title="理科実験部｜理科実軒 江草亭"
+            data-image="images/club/理科部.jpeg"
+            data-tag="展示"
+            data-tag-class="exhibit"
+            data-desc="S-lab2で実験の展示やショーをしています。例えば、ビスマスやちりめんモンスターなどをやります。また1日目の最後に校庭でペットボトルロケットを飛ばしたりゾウの歯磨き粉をしたりします。ぜひ来てください">
+             <span class="hitbox-text">理科実験部</span>
+        </div>
+
+        <div class="hitbox" 
+             style="top: 39.9948427%; left: 9.014213663%; width: 3.3%; height: 2.0%;"
+            data-category="exhibition club"
+            data-title="漫画研究部｜ようこそ漫研へ"
+            data-image="images/club/漫画研究部.png"
+            data-tag="展示"
+            data-tag-class="exhibit"
+            data-desc="部員たちが描いたイラストの部誌を配布します&#10;クイズに答えて景品がもらえるかも…？&#10;ソーシャルラボでお待ちしております〜&#10;(13号階3階)">
+             <span class="hitbox-text">漫画研究部</span>
+        </div>
+
+         <div class="hitbox" 
+             style="top: 49.6926250%; left: 26.40990371%; width: 3.3%; height: 6.0%;"
+            data-category="exhibition class"
+            data-title="PTA教養｜PTA教養ワークショップ　世界にひとつ♪作っちゃお！"
+            data-image="images/class/high1-3.png" 
+            data-tag="展示" 
+            data-tag-class="exhibit"
+            data-desc="昨年好評だったステンシル、缶バッジに加え、今年はバスボムと缶ミラーが新登場！こどもから大人まで、簡単に自分だけのオリジナルグッズを作ることができます♪">
+             <span class="hitbox-text">PTA教養</span>
+        </div>
+
+
 
     </div>
 
@@ -802,30 +953,53 @@
 
     <footer>
         <div class="sns-links"></div>
-        <p>© 2026 聖徳学園中学・高等学校 生徒会</p>
+        <p>© 2026 聖徳学園中学・高等学校 生徒会</br>Supported by Gemini/p>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hitboxes = document.querySelectorAll('.hitbox');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const searchInput = document.getElementById('mapSearch');
-            
-            let currentTarget = 'all';
-            let searchQuery = '';
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hitboxes = document.querySelectorAll('.hitbox');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('mapSearch');
+        
+        let currentTarget = 'all';
+        let searchQuery = '';
 
-            // スライド切替用状態管理
-            let currentProjects = [];
-            let currentIndex = 0;
+        let currentProjects = [];
+        let currentIndex = 0;
 
-            // 1. フィルター処理関数
-            function filterHitboxes() {
-                hitboxes.forEach(box => {
-                    const rawCategories = `${box.dataset.category || ''} ${box.dataset.tagClass || ''} ${box.dataset.tag || ''}`.toLowerCase();
-                    const title = (box.dataset.title || '').toLowerCase();
-                    const desc = (box.dataset.desc || '').toLowerCase();
-                    const place = (box.dataset.place || '').toLowerCase();
+        // 1. フィルター処理関数（複数企画内の各 tagClass やテキストも判定）
+        function filterHitboxes() {
+            hitboxes.forEach(box => {
+                let projects = [];
+
+                // data-projects がある場合は配列化、無ければ単一データからオブジェクト化
+                if (box.dataset.projects) {
+                    try {
+                        projects = JSON.parse(box.dataset.projects);
+                    } catch (e) {
+                        projects = [];
+                    }
+                } else {
+                    projects = [{
+                        title: box.dataset.title || '',
+                        place: box.dataset.place || '',
+                        desc: box.dataset.desc || '',
+                        tag: box.dataset.tag || '',
+                        tagClass: box.dataset.tagClass || '',
+                        category: box.dataset.category || ''
+                    }];
+                }
+
+                const boxCategory = (box.dataset.category || '').toLowerCase();
+
+                // 内包される企画のどれか「1つ以上」がフィルター/検索条件にマッチするか判定
+                const isMatched = projects.some(p => {
+                    const rawCategories = `${p.category || ''} ${p.tagClass || ''} ${p.tag || ''} ${boxCategory}`.toLowerCase();
+                    const title = (p.title || '').toLowerCase();
+                    const desc = (p.desc || '').toLowerCase();
+                    const place = (p.place || '').toLowerCase();
 
                     const matchCategory = (currentTarget === 'all' || rawCategories.includes(currentTarget.toLowerCase()));
                     const matchSearch = searchQuery === '' || 
@@ -833,136 +1007,137 @@
                                         desc.includes(searchQuery) || 
                                         place.includes(searchQuery);
 
-                    if (matchCategory && matchSearch) {
-                        box.classList.remove('dimmed');
-                        if (searchQuery !== '' || currentTarget !== 'all') {
-                            box.classList.add('highlighted');
-                        } else {
-                            box.classList.remove('highlighted');
-                        }
+                    return matchCategory && matchSearch;
+                });
+
+                if (isMatched) {
+                    box.classList.remove('dimmed');
+                    if (searchQuery !== '' || currentTarget !== 'all') {
+                        box.classList.add('highlighted');
                     } else {
-                        box.classList.add('dimmed');
                         box.classList.remove('highlighted');
                     }
-                });
-            }
-
-            // 2. フィルターボタン切替
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentTarget = btn.dataset.target || 'all';
-                    filterHitboxes();
-                });
-            });
-
-            // 3. 検索窓入力イベント
-            if (searchInput) {
-                searchInput.addEventListener('input', (e) => {
-                    searchQuery = e.target.value.trim().toLowerCase();
-                    filterHitboxes();
-                });
-            }
-
-            // 4. モーダル表示内容更新
-            function updateModalContent(index) {
-                const item = currentProjects[index];
-                if (!item) return;
-
-                document.getElementById('modalTitle').textContent = item.title || '';
-                document.getElementById('modalPlace').textContent = item.place || '';
-                document.getElementById('modalDesc').textContent = item.desc || '';
-
-                const tagEl = document.getElementById('modalTag');
-                if (item.tag) {
-                    tagEl.textContent = item.tag;
-                    tagEl.className = 'tag ' + (item.tagClass || '');
-                    tagEl.style.display = 'inline-block';
                 } else {
-                    tagEl.style.display = 'none';
+                    box.classList.add('dimmed');
+                    box.classList.remove('highlighted');
                 }
-
-                const imgEl = document.getElementById('modalImage');
-                const imgBox = document.getElementById('modalImgBox');
-                if (item.image) {
-                    imgEl.src = item.image;
-                    imgBox.style.display = 'block';
-                } else {
-                    imgBox.style.display = 'none';
-                }
-
-                document.getElementById('projectCounter').textContent = `${index + 1} / ${currentProjects.length}`;
-            }
-
-            // 5. モーダル開閉・ナビゲーション制御
-            const modal = document.getElementById('modal');
-            const closeBtn = document.getElementById('closeBtn');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const counterEl = document.getElementById('projectCounter');
-
-            hitboxes.forEach(box => {
-                box.addEventListener('click', (e) => {
-                    e.stopPropagation();
-
-                    // data-projects（複数用）があれば配列化、無ければ単一データから配列を生成
-                    if (box.dataset.projects) {
-                        try {
-                            currentProjects = JSON.parse(box.dataset.projects);
-                        } catch (err) {
-                            console.error('JSON Parse Error:', err);
-                            currentProjects = [];
-                        }
-                    } else {
-                        currentProjects = [{
-                            title: box.dataset.title || '',
-                            place: box.dataset.place || '',
-                            desc: box.dataset.desc || '',
-                            tag: box.dataset.tag || '',
-                            tagClass: box.dataset.tagClass || '',
-                            image: box.dataset.image || ''
-                        }];
-                    }
-
-                    currentIndex = 0;
-
-                    // 企画が複数（2つ以上）ある場合のみ矢印とカウンターを表示し、単一の場合は非表示にする
-                    if (currentProjects.length > 1) {
-                        prevBtn.style.display = 'flex';
-                        nextBtn.style.display = 'flex';
-                        counterEl.style.display = 'block';
-                    } else {
-                        prevBtn.style.display = 'none';
-                        nextBtn.style.display = 'none';
-                        counterEl.style.display = 'none';
-                    }
-
-                    updateModalContent(currentIndex);
-                    modal.style.display = 'flex';
-                });
             });
+        }
 
-            // 前へ・次へ ボタン処理
-            prevBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (currentProjects.length <= 1) return;
-                currentIndex = (currentIndex - 1 + currentProjects.length) % currentProjects.length;
-                updateModalContent(currentIndex);
+        // 2. フィルターボタン切替
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTarget = btn.dataset.target || 'all';
+                filterHitboxes();
             });
-
-            nextBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (currentProjects.length <= 1) return;
-                currentIndex = (currentIndex + 1) % currentProjects.length;
-                updateModalContent(currentIndex);
-            });
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => modal.style.display = 'none');
-            }
-            window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
         });
-    </script>
+
+        // 3. 検索窓入力イベント
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                filterHitboxes();
+            });
+        }
+
+        // 4. モーダル表示内容更新
+        function updateModalContent(index) {
+            const item = currentProjects[index];
+            if (!item) return;
+
+            document.getElementById('modalTitle').textContent = item.title || '';
+            document.getElementById('modalPlace').textContent = item.place || '';
+            document.getElementById('modalDesc').textContent = item.desc || '';
+
+            const tagEl = document.getElementById('modalTag');
+            if (item.tag) {
+                tagEl.textContent = item.tag;
+                tagEl.className = 'tag ' + (item.tagClass || '');
+                tagEl.style.display = 'inline-block';
+            } else {
+                tagEl.style.display = 'none';
+            }
+
+            const imgEl = document.getElementById('modalImage');
+            const imgBox = document.getElementById('modalImgBox');
+            if (item.image) {
+                imgEl.src = item.image;
+                imgBox.style.display = 'block';
+            } else {
+                imgBox.style.display = 'none';
+            }
+
+            document.getElementById('projectCounter').textContent = `${index + 1} / ${currentProjects.length}`;
+        }
+
+        // 5. モーダル開閉・ナビゲーション制御
+        const modal = document.getElementById('modal');
+        const closeBtn = document.getElementById('closeBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counterEl = document.getElementById('projectCounter');
+
+        hitboxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                if (box.dataset.projects) {
+                    try {
+                        currentProjects = JSON.parse(box.dataset.projects);
+                    } catch (err) {
+                        console.error('JSON Parse Error:', err);
+                        currentProjects = [];
+                    }
+                } else {
+                    currentProjects = [{
+                        title: box.dataset.title || '',
+                        place: box.dataset.place || '',
+                        desc: box.dataset.desc || '',
+                        tag: box.dataset.tag || '',
+                        tagClass: box.dataset.tagClass || '',
+                        image: box.dataset.image || ''
+                    }];
+                }
+
+                currentIndex = 0;
+
+                if (currentProjects.length > 1) {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                    counterEl.style.display = 'block';
+                } else {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                    counterEl.style.display = 'none';
+                }
+
+                updateModalContent(currentIndex);
+                modal.style.display = 'flex';
+            });
+        });
+
+        // 前へ・次へ ボタン処理
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentProjects.length <= 1) return;
+            currentIndex = (currentIndex - 1 + currentProjects.length) % currentProjects.length;
+            updateModalContent(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentProjects.length <= 1) return;
+            currentIndex = (currentIndex + 1) % currentProjects.length;
+            updateModalContent(currentIndex);
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
+        }
+        window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+    });
+</script>
 </body>
 </html>
